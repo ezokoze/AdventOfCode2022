@@ -26,25 +26,25 @@ const processTotalScore = (input: any): number => {
 
   input.forEach((round: any) => {
     const opponent = round[0];
-    const me = round[1];
+    const myChoice = round[1];
 
-    total += me;
+    total += myChoice;
 
     switch (opponent) {
       case Choice.Rock:
-        if (me === Choice.Rock) total += 3; // we draw
-        else if (me === Choice.Paper) total += 6; // we win
-        else if (me === Choice.Scissors) total += 0; // we lose
+        if (myChoice === Choice.Rock) total += 3; // we draw
+        else if (myChoice === Choice.Paper) total += 6; // we win
+        else if (myChoice === Choice.Scissors) total += 0; // we lose
         break;
       case Choice.Paper:
-        if (me === Choice.Rock) total += 0; // we lose
-        else if (me === Choice.Paper) total += 3; // we draw
-        else if (me === Choice.Scissors) total += 6; // we win
+        if (myChoice === Choice.Rock) total += 0; // we lose
+        else if (myChoice === Choice.Paper) total += 3; // we draw
+        else if (myChoice === Choice.Scissors) total += 6; // we win
         break;
       case Choice.Scissors:
-        if (me === Choice.Rock) total += 6; // we win
-        else if (me === Choice.Paper) total += 0; // we lose
-        else if (me === Choice.Scissors) total += 3; // we draw
+        if (myChoice === Choice.Rock) total += 6; // we win
+        else if (myChoice === Choice.Paper) total += 0; // we lose
+        else if (myChoice === Choice.Scissors) total += 3; // we draw
         break;
     }
   });
