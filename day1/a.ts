@@ -5,8 +5,8 @@ const input = readFileSync(join(__dirname, "input.txt"), "utf-8");
 
 const inputLines = input.trim().split("\n");
 
-let elfCalories: any = [];
-let currentArray: any = [];
+const elfCalories: number[] = [];
+let currentArray: number[] = [];
 
 for (const line of inputLines) {
   if (line !== "\r") {
@@ -19,14 +19,14 @@ for (const line of inputLines) {
   }
 
   // This line contains the sum of calories for an item, so add it to the current array
-  elfCalories.push(currentArray.reduce((a: any, b: any) => a + b, 0));
+  elfCalories.push(currentArray.reduce((a: number, b: number) => a + b, 0));
 }
 
-let sortedArray = elfCalories.sort((a: number, b: number) => a - b);
+const sortedArray = elfCalories.sort((a: number, b: number) => a - b);
 
-let topThree = sortedArray
+const topThree = sortedArray
   .reverse()
   .slice(0, 3)
-  .reduce((a: any, b: any) => a + b, 0);
+  .reduce((a: number, b: number) => a + b, 0);
 
 console.log("topThree", topThree);

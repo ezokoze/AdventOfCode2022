@@ -33,10 +33,10 @@ const decodeLetter = (l: string) => {
 };
 
 // method to get final score
-const processTotalScore = (input: any): number => {
+const processTotalScore = (input: number[]): number => {
   let total = 0;
 
-  input.forEach((round: any) => {
+  input.forEach((round: number) => {
     const opponent = round[0];
     const me = round[1];
 
@@ -64,8 +64,8 @@ const processTotalScore = (input: any): number => {
   return total;
 };
 
-const changeChoiceAccordingToStrategy = (input: any): any => {
-  input.map((x: any) => {
+const changeChoiceAccordingToStrategy = (input: number[]): number[] => {
+  input.map((x: number) => {
     if (x[1] === EncryptedChoice.LOSE) {
       switch (x[0]) {
         case Choice.Rock:

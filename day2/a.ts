@@ -21,10 +21,10 @@ const decodeLetter = (l: string) => {
 };
 
 // method to get final score
-const processTotalScore = (input: any): number => {
+const processTotalScore = (input: number[]): number => {
   let total = 0;
 
-  input.forEach((round: any) => {
+  input.forEach((round: number) => {
     const opponent = round[0];
     const myChoice = round[1];
 

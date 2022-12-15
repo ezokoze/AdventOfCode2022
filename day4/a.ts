@@ -7,7 +7,7 @@ const assignments = readFileSync(join(__dirname, "input.txt"), "utf-8").split(
   /\r?\n/
 );
 
-let formattedAssignments = assignments.map((assignment) =>
+const formattedAssignments = assignments.map((assignment) =>
   assignment.split(",")
 );
 
